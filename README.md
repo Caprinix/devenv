@@ -12,9 +12,9 @@
 
 [![Built with Nix](https://img.shields.io/static/v1?logo=nixos&logoColor=white&label=&message=Built%20with%20Nix&color=41439a)](https://builtwithnix.org)
 [![Discord channel](https://img.shields.io/discord/1036369714731036712?color=7389D8&label=discord&logo=discord&logoColor=ffffff)](https://discord.gg/naMgvexb6q)
-![License: Apache 2.0](https://img.shields.io/github/license/cachix/devenv)
-[![Version](https://img.shields.io/github/v/release/cachix/devenv?color=green&label=version&sort=semver)](https://github.com/cachix/devenv/releases)
-[![CI](https://github.com/cachix/devenv/actions/workflows/buildtest.yml/badge.svg)](https://github.com/cachix/devenv/actions/workflows/buildtest.yml?branch=main)
+![License: Apache 2.0](https://img.shields.io/github/license/caprinix/devenv)
+[![Version](https://img.shields.io/github/v/release/caprinix/devenv?color=green&label=version&sort=semver)](https://github.com/caprinix/devenv/releases)
+[![CI](https://github.com/caprinix/devenv/actions/workflows/buildtest.yml/badge.svg)](https://github.com/caprinix/devenv/actions/workflows/buildtest.yml?branch=main)
 
 Running ``devenv init`` generates ``devenv.nix``:
 

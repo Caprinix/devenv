@@ -8,7 +8,7 @@ We have a rule that new features need to come with documentation and tests (`dev
 
 1. Follow the [installation instructions for Nix and Cachix](../../getting-started/#installation) and [install direnv](../../automatic-shell-activation/).
 
-2. `git clone https://github.com/cachix/devenv.git`
+2. `git clone https://github.com/caprinix/devenv.git`
 
 3. `cd devenv`
 

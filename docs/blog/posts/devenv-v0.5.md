@@ -30,7 +30,7 @@ authors:
 
 - Python language now sets `$PYTHONPATH` to point to any installed packages in `packages` attribute.
 
-- Ruby langauge support now defaults to the latest version `3.1.x`, ships with [an example running rails](https://github.com/cachix/devenv/blob/main/examples/ruby/devenv.nix), sets `$GEM_HOME` and `$GEM_PATH` environment variables. Next release will support picking [any version of Ruby](https://github.com/cachix/devenv/issues/220) - please leave a thumbs up.
+- Ruby langauge support now defaults to the latest version `3.1.x`, ships with [an example running rails](https://github.com/caprinix/devenv/blob/main/examples/ruby/devenv.nix), sets `$GEM_HOME` and `$GEM_PATH` environment variables. Next release will support picking [any version of Ruby](https://github.com/cachix/devenv/issues/220) - please leave a thumbs up.
 
 - [jpetrucciani](https://github.com/jpetrucciani) contributed [Nim](https://nim-lang.org/), [V](https://vlang.io/) and [HCL/Terraform](https://github.com/hashicorp/hcl) languages support.  
 
@@ -53,7 +53,7 @@ authors:
 - [rkrzr](https://github.com/rkrzr
 ) added [hivemind](https://github.com/DarthSim/hivemind) [process.implementation](https://devenv.sh/reference/options/#installation) option.
 
-- [domenkozar](https://github.com/domenkozar) added [an example](https://github.com/cachix/devenv/tree/main/examples/nur) how to integrate [NUR](https://nur.nix-community.org/).
+- [domenkozar](https://github.com/domenkozar) added [an example](https://github.com/caprinix/devenv/tree/main/examples/nur) how to integrate [NUR](https://nur.nix-community.org/).
 
 # Bug fixes
 

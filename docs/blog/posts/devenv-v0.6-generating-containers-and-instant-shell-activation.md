@@ -21,7 +21,7 @@ This release comes with the most notable improvements based on the feedback from
 While `devenv shell` provides a [simple native developer environment](/basics/) experience,
 `devenv container <name>` allows you to generate and copy [OCI container](https://opencontainers.org/) into a registry.
 
-Containers are a great way to distribute ready-made applications, leveraging platforms like [fly.io](https://github.com/cachix/devenv/tree/main/examples/fly.io) to deploy them into production.
+Containers are a great way to distribute ready-made applications, leveraging platforms like [fly.io](https://github.com/caprinix/devenv/tree/main/examples/fly.io) to deploy them into production.
 
 An example for Ruby:
 

@@ -6,7 +6,7 @@ members = ["devenv", "devenv-eval-cache", "devenv-run-tests", "devenv-tasks", "x
 edition = "2021"
 license = "APACHE-2.0"
 homepage = "https://devenv.sh/"
-repository = "https://github.com/cachix/devenv/"
+repository = "https://github.com/caprinix/devenv/"
 
 [workspace.dependencies]
 devenv = { path = "devenv" }

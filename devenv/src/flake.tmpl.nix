@@ -70,7 +70,7 @@
               then devenvdefaultpath
               else throw (devenvdefaultpath + " file does not exist for input ${name}.");
           project = pkgs.lib.evalModules {
-            specialArgs = inputs // { inherit inputs pkgs pkgs-unstable; };
+            specialArgs = inputs // { inherit inputs pkgs pkgs-unstable devenv_root; };
             modules = [
               (inputs.devenv.modules + /top-level.nix)
               {

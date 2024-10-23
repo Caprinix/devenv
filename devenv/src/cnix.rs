@@ -361,6 +361,7 @@ impl<'a> Nix<'a> {
             let mut cached_cmd = CachedCommand::new(&self.pool);
 
             cached_cmd.watch_path(self.devenv_root.join("devenv.yaml"));
+            cached_cmd.watch_path(self.devenv_root.join("devenv.lock"));
 
             cached_cmd.unwatch_path(self.devenv_root.join(".devenv.flake.nix"));
             // Ignore anything in .devenv.
@@ -708,14 +709,20 @@ impl<'a> Nix<'a> {
                         b) Add binary caches to /etc/nix/nix.conf yourself by editing configuration.nix:
                         {{
                             nix.extraOptions = ''
-                                extra-substituters = {};
-                                extra-trusted-public-keys = {};
+                                extra-substituters = {}
+                                extra-trusted-public-keys = {}
                             '';
                         }}
 
-                        Lastly rebuild your system
+                        Disable automatic cache configuration in `devenv.nix`:
 
-                        $ sudo nixos-rebuild switch
+                        {{
+                            cachix.enable = false;
+                        }}
+
+                        Lastly, rebuild your system:
+
+                          $ sudo nixos-rebuild switch
                     ", whoami::username()
                     , caches.caches.pull.iter().map(|cache| format!("https://{}.cachix.org", cache)).collect::<Vec<String>>().join(" ")
                     , caches.known_keys.values().cloned().collect::<Vec<String>>().join(" ")

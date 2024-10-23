@@ -115,12 +115,7 @@ package
 
 
 *Default:*
-` "pkgs.android-studio" `
-
-
-
-*Example:*
-` "pkgs.android-studio" `
+` pkgs.android-studio `
 
 *Declared by:*
  - [https://github.com/caprinix/devenvnv/blob/main/src/modules/integrations/android.nix](https://github.caprinix/devenvvenvnv/blob/main/src/modules/integrations/android.nix)
@@ -343,12 +338,7 @@ package
 
 
 *Default:*
-` "pkgs.flutter" `
-
-
-
-*Example:*
-` "pkgs.flutter" `
+` pkgs.flutter `
 
 *Declared by:*
  - [https://github.com/caprinix/devenvnv/blob/main/src/modules/integrations/android.nix](https://github.caprinix/devenvvenvnv/blob/main/src/modules/integrations/android.nix)
@@ -1086,7 +1076,7 @@ path or list of path
 
 
 *Default:*
-` "self" `
+` self `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/containers.nix](https://github.com/caprinix/devenv/blob/main/src/modules/containers.nix)
@@ -1824,7 +1814,7 @@ string
 
 
 *Default:*
-` "1.3.0" `
+` "1.3.1" `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/update-check.nix](https://github.com/caprinix/devenv/blob/main/src/modules/update-check.nix)
@@ -2783,7 +2773,7 @@ package
 
 
 *Default:*
-` "pkgs.ghc" `
+` pkgs.ghc `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/languages/haskell.nix](https://github.com/caprinix/devenv/blob/main/src/modules/languages/haskell.nix)
@@ -2804,7 +2794,7 @@ null or package
 
 
 *Default:*
-` "pkgs.haskell-language-server" `
+` pkgs.haskell-language-server `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/languages/haskell.nix](https://github.com/caprinix/devenv/blob/main/src/modules/languages/haskell.nix)
@@ -2825,7 +2815,7 @@ null or package
 
 
 *Default:*
-` "pkgs.stack" `
+` pkgs.stack `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/languages/haskell.nix](https://github.com/caprinix/devenv/blob/main/src/modules/languages/haskell.nix)
@@ -2872,12 +2862,12 @@ package
 
 
 *Default:*
-` "pkgs.idris2" `
+` pkgs.idris2 `
 
 
 
 *Example:*
-` "pkgs.idris" `
+` pkgs.idris `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/languages/idris.nix](https://github.com/caprinix/devenv/blob/main/src/modules/languages/idris.nix)
@@ -3026,7 +3016,7 @@ package
 
 
 *Default:*
-` "pkgs.maven.override { jdk_headless = cfg.jdk.package; }" `
+` pkgs.maven.override { jdk_headless = cfg.jdk.package; } `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/languages/java.nix](https://github.com/caprinix/devenv/blob/main/src/modules/languages/java.nix)
@@ -3564,7 +3554,7 @@ package
 
 
 *Default:*
-` "pkgs.lean4" `
+` pkgs.lean4 `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/languages/lean4.nix](https://github.com/caprinix/devenv/blob/main/src/modules/languages/lean4.nix)
@@ -5852,7 +5842,7 @@ package
 
 
 *Default:*
-` "pkgs.scala_3" `
+` pkgs.scala_3 `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/languages/scala.nix](https://github.com/caprinix/devenv/blob/main/src/modules/languages/scala.nix)
@@ -6118,7 +6108,7 @@ package
 
 
 *Default:*
-` "pkgs.mlton" `
+` pkgs.mlton `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/languages/standardml.nix](https://github.com/caprinix/devenv/blob/main/src/modules/languages/standardml.nix)
@@ -6165,7 +6155,7 @@ package
 
 
 *Default:*
-` "pkgs.swift" `
+` pkgs.swift `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/languages/swift.nix](https://github.com/caprinix/devenv/blob/main/src/modules/languages/swift.nix)
@@ -6276,20 +6266,26 @@ boolean
 
 
 
-Packages available to TeX Live
+Extra packages to add to the base TeX Live set
 
 
 
 *Type:*
-non-empty (list of string)
+list of string
 
 
 
 *Default:*
+` [ ] `
+
+
+
+*Example:*
 
 ```
 [
-  "collection-basic"
+  "algorithms"
+  "latexmk"
 ]
 ```
 
@@ -6312,7 +6308,12 @@ unspecified value
 
 
 *Default:*
-` pkgs.texlive `
+` pkgs.texliveSmall `
+
+
+
+*Example:*
+` pkgs.texliveBasic `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/languages/texlive.nix](https://github.com/caprinix/devenv/blob/main/src/modules/languages/texlive.nix)
@@ -6342,6 +6343,53 @@ boolean
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/languages/typescript.nix](https://github.com/caprinix/devenv/blob/main/src/modules/languages/typescript.nix)
+
+
+
+## languages.typst.enable
+
+
+
+Whether to enable tools for Typst development.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/typst.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/typst.nix)
+
+
+
+## languages.typst.package
+
+
+
+Which package of Typst to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.typst `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/typst.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/typst.nix)
 
 
 
@@ -7681,8 +7729,6 @@ attribute set of unspecified value
 
 ## pre-commit.hooks.\<name>.require_serial
 
-
-
 if true this hook will execute using a single process instead of in parallel.
 
 
@@ -7722,6 +7768,8 @@ list of (one of “commit-msg”, “post-checkout”, “post-commit”, “pos
 
 
 ## pre-commit.hooks.\<name>.types
+
+
 
 List of file types to run on. See [Filtering files with types](https://pre-commit.com/\#filtering-files-with-types).
 
@@ -36364,7 +36412,7 @@ unspecified value
 
 
 *Default:*
-` "pkgs.cockroachdb-bin" `
+` pkgs.cockroachdb-bin `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/services/cockroachdb.nix](https://github.com/caprinix/devenv/blob/main/src/modules/services/cockroachdb.nix)
@@ -37520,6 +37568,27 @@ boolean
 
 
 
+## services.meilisearch.package
+
+
+
+Which Meilisearch package to use
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` "pkgs.meilisearch" `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/services/meilisearch.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/meilisearch.nix)
+
+
+
 ## services.meilisearch.environment
 
 
@@ -38553,7 +38622,7 @@ package
 
 
 *Default:*
-` "pkgs.nginx" `
+` pkgs.nginx `
 
 *Declared by:*
  - [https://github.com/caprinix/devenv/blob/main/src/modules/services/nginx.nix](https://github.com/caprinix/devenv/blob/main/src/modules/services/nginx.nix)

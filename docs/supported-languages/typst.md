@@ -3,9 +3,9 @@
 
 [comment]: # (Please add your documentation on top of this line)
 
-## languages\.idris\.enable
+## languages\.typst\.enable
 
-Whether to enable tools for Idris development\.
+Whether to enable tools for Typst development\.
 
 
 
@@ -24,11 +24,11 @@ boolean
 
 
 
-## languages\.idris\.package
+## languages\.typst\.package
 
 
 
-The Idris package to use\.
+Which package of Typst to use\.
 
 
 
@@ -38,9 +38,4 @@ package
 
 
 *Default:*
-` pkgs.idris2 `
-
-
-
-*Example:*
-` pkgs.idris `
+` pkgs.typst `

@@ -20,6 +20,7 @@
   ]);
 
   languages.nix.enable = true;
+  languages.nix.lsp.package = pkgs.nixd;
   # for cli
   languages.rust.enable = true;
   # for docs
@@ -33,6 +34,9 @@
   languages.javascript.enable = true;
   languages.javascript.npm.enable = true;
   languages.javascript.npm.install.enable = true;
+
+  editors.vscode.enable = true;
+  editors.vscode.mixins = [ "nix" ];
 
   devcontainer.enable = true;
   devcontainer.settings.customizations.vscode.extensions = [ "jnoortheen.nix-ide" ];

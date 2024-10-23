@@ -6,12 +6,15 @@
         pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
       pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
       nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
+      nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+      nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+      caprinix-settings.url = "github:caprinix/settings";
       devenv.url = "github:caprinix/devenv?dir=src/modules";
       } // (if builtins.pathExists (devenv_dotfile + "/flake.json")
       then builtins.fromJSON (builtins.readFile (devenv_dotfile +  "/flake.json"))
       else { });
 
-      outputs = { nixpkgs, ... }@inputs:
+      outputs = { nixpkgs, nixpkgs-unstable, ... }@inputs:
         let
           __DEVENV_VARS__
             devenv =
@@ -26,11 +29,20 @@
                 in
                   input.overlays.${overlay} or (throw "Input `${inputName}` has no overlay called `${overlay}`. Supported overlays: ${nixpkgs.lib.concatStringsSep ", " (builtins.attrNames input.overlays)}"))
               inputAttrs.overlays or [ ];
-          overlays = nixpkgs.lib.flatten (nixpkgs.lib.mapAttrsToList getOverlays (devenv.inputs or { }));
+          overlays = nixpkgs.lib.flatten ([ inputs.nix-vscode-extensions.overlays.default ] ++ (nixpkgs.lib.mapAttrsToList getOverlays (devenv.inputs or { })));
           pkgs = import nixpkgs {
             inherit system;
             config = {
-              allowUnfree = devenv.allowUnfree or false;
+              allowUnfree = devenv.allowUnfree or true;
+              allowBroken = devenv.allowBroken or false;
+              permittedInsecurePackages = devenv.permittedInsecurePackages or [ ];
+            };
+            inherit overlays;
+          };
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config = {
+              allowUnfree = devenv.allowUnfree or true;
               allowBroken = devenv.allowBroken or false;
               permittedInsecurePackages = devenv.permittedInsecurePackages or [ ];
             };
@@ -59,7 +71,7 @@
               then devenvdefaultpath
               else throw (devenvdefaultpath + " file does not exist for input ${name}.");
           project = pkgs.lib.evalModules {
-            specialArgs = inputs // { inherit inputs pkgs; };
+            specialArgs = inputs // { inherit inputs pkgs pkgs-unstable; };
             modules = [
               (inputs.devenv.modules + /top-level.nix)
               {
